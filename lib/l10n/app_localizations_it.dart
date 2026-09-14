@@ -2115,5 +2115,6 @@ class AppLocalizationsIt extends AppLocalizations {
   String get qrtrReaderTitle => 'Qualcomm modem (QRTR)';
 
   @override
-  String get qrtrReaderSubtitle => 'Qualcomm\'s low-level modem protocol';
+  String get qrtrReaderSubtitle =>
+      'Qualcomm\'s low-level modem protocol(Need Shizuku)';
 }

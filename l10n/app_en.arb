@@ -788,5 +788,5 @@
   "imeiDigits": "TAC or IMEI digits",
   "importAction": "Import",
   "qrtrReaderTitle": "Qualcomm modem (QRTR)",
-  "qrtrReaderSubtitle": "Qualcomm's low-level modem protocol"
+  "qrtrReaderSubtitle": "Qualcomm's low-level modem protocol(Need Shizuku)"
 }

@@ -23,6 +23,10 @@ class ReaderHelper {
       return Icons.cloud_rounded;
     }
 
+    if (reader.startsWith('qrtr:')) {
+      return Icons.memory_rounded;
+    }
+
     return Icons.usb_rounded;
   }
 
