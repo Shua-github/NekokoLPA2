@@ -24,6 +24,7 @@ import 'utils/migration_helper.dart';
 import 'utils/locale_utils.dart';
 
 import './src/rust/frb_generated.dart';
+import 'utils/platform_adapter.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey =
@@ -41,8 +42,7 @@ void main() async {
 /// platform starts without it, so a build that carries no native library for
 /// the platform it is running on still runs.
 Future<void> _initRust() async {
-  if (defaultTargetPlatform != TargetPlatform.android) return;
-
+  if (!PlatformX.isAndroid) return;
   await RustLib.init();
 }
 
