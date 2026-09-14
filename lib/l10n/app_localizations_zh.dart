@@ -2015,7 +2015,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get qrtrReaderSubtitle =>
-      'Qualcomm\'s low-level modem protocol(Need Shizuku)';
+      'Qualcomm\'s low-level modem protocol (requires Shizuku)';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).

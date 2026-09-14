@@ -3932,7 +3932,7 @@ abstract class AppLocalizations {
   /// No description provided for @qrtrReaderSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Qualcomm\'s low-level modem protocol(Need Shizuku)'**
+  /// **'Qualcomm\'s low-level modem protocol (requires Shizuku)'**
   String get qrtrReaderSubtitle;
 }
 

@@ -2109,5 +2109,5 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get qrtrReaderSubtitle =>
-      'Qualcomm\'s low-level modem protocol(Need Shizuku)';
+      'Qualcomm\'s low-level modem protocol (requires Shizuku)';
 }
