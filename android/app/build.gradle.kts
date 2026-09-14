@@ -50,6 +50,8 @@ android {
 
     buildFeatures {
         buildConfig = true
+        // The QRTR user service is described by an AIDL interface.
+        aidl = true
     }
 
 
@@ -130,5 +132,11 @@ flutter {
 
 dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
+
+    // Only the `shell` user may open a QRTR socket, so the app asks Shizuku to
+    // run a service there and takes the descriptor back over Binder.
+    implementation("dev.rikka.shizuku:api:13.1.5")
+    implementation("dev.rikka.shizuku:provider:13.1.5")
+
     testImplementation("junit:junit:4.13.2")
 }

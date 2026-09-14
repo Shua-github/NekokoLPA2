@@ -15,6 +15,15 @@ analyzer:
     - "local_packages/**"
     - "reference/**"
     - "test/**"
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
+    # Cargokit is vendored build tooling, with its own package config.
+    - rust_builder/**
 
 linter:
   # The lint rules applied to this project can be customized in the

@@ -35,6 +35,7 @@ class ReaderTypesSettingsPage extends StatelessWidget {
                     if (!PlatformX.isLinux) _buildBleConnectorSwitcher(context),
                     _buildRemoteConnectorSwitcher(context),
                     if (PlatformX.isAndroid) ...[
+                      _buildQrtrConnectorSwitcher(context),
                       _buildOmapiConnectorSwitcher(context),
                       if (kIsPrivileged) _buildTmapiConnectorSwitcher(context),
                     ],
@@ -233,6 +234,32 @@ class ReaderTypesSettingsPage extends StatelessWidget {
       ),
       onTap: () =>
           settings.setEnableCcidConnector(!settings.enableCcidConnector),
+    );
+  }
+
+  Widget _buildQrtrConnectorSwitcher(BuildContext context) {
+    final settings = AppSettings();
+    final l10n = AppLocalizations.of(context)!;
+
+    return _buildResponsiveTile(
+      context,
+      icon: Container(
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.teal.withValues(alpha: 0.1),
+          shape: BoxShape.circle,
+        ),
+        child: const Icon(Icons.memory_rounded, size: 20, color: Colors.teal),
+      ),
+      title: l10n.qrtrReaderTitle,
+      subtitle: l10n.qrtrReaderSubtitle,
+      child: _buildCustomSwitch(
+        context,
+        settings.enableQrtrConnector,
+        (v) => settings.setEnableQrtrConnector(v),
+      ),
+      onTap: () =>
+          settings.setEnableQrtrConnector(!settings.enableQrtrConnector),
     );
   }
 

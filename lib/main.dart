@@ -23,13 +23,27 @@ import 'pages/main_tab_screen.dart';
 import 'utils/migration_helper.dart';
 import 'utils/locale_utils.dart';
 
+import './src/rust/frb_generated.dart';
+
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey =
     GlobalKey<ScaffoldMessengerState>();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await _initRust();
   _runMain();
+}
+
+/// Load the Rust library, on the platform that has it.
+///
+/// The library is only behind the QRTR reader, which is Android's: every other
+/// platform starts without it, so a build that carries no native library for
+/// the platform it is running on still runs.
+Future<void> _initRust() async {
+  if (defaultTargetPlatform != TargetPlatform.android) return;
+
+  await RustLib.init();
 }
 
 void _runMain() async {

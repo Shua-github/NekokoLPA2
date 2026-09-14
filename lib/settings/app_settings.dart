@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../adapter/qrtr/qrtr_host.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:logging/logging.dart';
 import '../services/database_service.dart';
@@ -350,6 +351,10 @@ class AppSettings extends ChangeNotifier {
   bool _enableCcidConnector = true;
   bool get enableCcidConnector => _enableCcidConnector;
 
+  /// The modem's own QRTR bus, which needs no USB at all.
+  bool _enableQrtrConnector = false;
+  bool get enableQrtrConnector => _enableQrtrConnector;
+
   bool _enableOmapiConnector = true;
   bool get enableOmapiConnector => _enableOmapiConnector;
 
@@ -525,6 +530,10 @@ class AppSettings extends ChangeNotifier {
         _prefs?.getBool('enableScheduledNotifications') ?? true;
     _enableBleConnector = _prefs?.getBool('enableBleConnector') ?? true;
     _enableCcidConnector = _prefs?.getBool('enableCcidConnector') ?? true;
+    // On a Qualcomm device the bus is there whether or not anything is
+    // plugged in, so it starts on there and off everywhere else.
+    _enableQrtrConnector =
+        _prefs?.getBool('enableQrtrConnector') ?? await QrtrHost.isSupported();
     bool otbridgeHasOmapi = false;
     bool otbridgeHasTmapi = false;
 
@@ -1098,6 +1107,12 @@ class AppSettings extends ChangeNotifier {
   Future<void> setEnableCcidConnector(bool value) async {
     _enableCcidConnector = value;
     await _prefs?.setBool('enableCcidConnector', value);
+    notifyListeners();
+  }
+
+  Future<void> setEnableQrtrConnector(bool value) async {
+    _enableQrtrConnector = value;
+    await _prefs?.setBool('enableQrtrConnector', value);
     notifyListeners();
   }
 

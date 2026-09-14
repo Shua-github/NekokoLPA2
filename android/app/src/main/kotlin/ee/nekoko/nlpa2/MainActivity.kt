@@ -10,5 +10,6 @@ class MainActivity : FlutterActivity() {
         flutterEngine.plugins.add(OmapiPlugin())
         flutterEngine.plugins.add(TelephonyPlugin())
         flutterEngine.plugins.add(CertificatePlugin())
+        flutterEngine.plugins.add(QrtrPlugin())
     }
 }

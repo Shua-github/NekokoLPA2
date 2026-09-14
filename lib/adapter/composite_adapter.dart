@@ -14,6 +14,7 @@ import 'nbridge/nbridge_adapter.dart';
 import 'omapi/omapi_adapter.dart';
 import 'telephony/telephony_adapter.dart';
 import 'scrp/scrp_adapter.dart';
+import 'qrtr/qrtr_reader_adapter.dart';
 
 import 'remote/remocard_adapter.dart';
 import '../settings/app_settings.dart';
@@ -40,6 +41,7 @@ class CompositeAdapter extends BaseAdapter {
   final OmapiAdapter _omapiAdapter = OmapiAdapter();
   final TelephonyAdapter _telephonyAdapter = TelephonyAdapter();
   final ScrpAdapter _scrpAdapter = ScrpAdapter();
+  final QrtrReaderAdapter _qrtrAdapter = QrtrReaderAdapter();
   final Logger _log = Logger('CompositeAdapter');
 
   Future<Reader?> scanScrp() => _scrpAdapter.scanScrp();
@@ -192,6 +194,16 @@ class CompositeAdapter extends BaseAdapter {
         } catch (e) {
           _log.warning("Auto-load remote failed: $e");
         }
+      }
+    }
+
+    // The modem's own bus, which needs no cable at all: the card is the
+    // handset's, reached through the process Shizuku runs.
+    if (PlatformX.isAndroid) {
+      try {
+        addReaders(await _qrtrAdapter.listReaders(force: force));
+      } catch (e) {
+        _log.warning("QRTR modem list failed: $e");
       }
     }
 
@@ -470,6 +482,13 @@ class CompositeAdapter extends BaseAdapter {
       }
     } else if (reader.source is ScrpAdapter) {
       // Always enabled for now or check setting if desired
+    } else if (reader.source is QrtrReaderAdapter) {
+      if (!AppSettings().enableQrtrConnector) {
+        throw AppException(
+          AppErrorCode.ERROR_OMAPI_PERMISSION_DENIED,
+          message: "QRTR connector is disabled",
+        );
+      }
     }
 
     return await runExclusive(() async {

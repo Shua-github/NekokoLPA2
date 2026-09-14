@@ -786,5 +786,7 @@
   "editDeviceImei": "Edit Device TAC",
   "editDeviceImeiInfo": "Enter an 8-digit TAC, or a 15-digit IMEI. Default TAC: 35383741.",
   "imeiDigits": "TAC or IMEI digits",
-  "importAction": "Import"
+  "importAction": "Import",
+  "qrtrReaderTitle": "Qualcomm modem (QRTR)",
+  "qrtrReaderSubtitle": "Qualcomm's low-level modem protocol"
 }

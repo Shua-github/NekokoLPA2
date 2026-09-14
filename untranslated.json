@@ -4,7 +4,9 @@
     "beeSimFirmwareAction",
     "beeSimFirmwareTitle",
     "beeSimFirmwareWarning",
-    "beeSimFirmwareConfirm"
+    "beeSimFirmwareConfirm",
+    "qrtrReaderTitle",
+    "qrtrReaderSubtitle"
   ],
 
   "es": [
@@ -12,7 +14,9 @@
     "beeSimFirmwareAction",
     "beeSimFirmwareTitle",
     "beeSimFirmwareWarning",
-    "beeSimFirmwareConfirm"
+    "beeSimFirmwareConfirm",
+    "qrtrReaderTitle",
+    "qrtrReaderSubtitle"
   ],
 
   "fr": [
@@ -20,7 +24,9 @@
     "beeSimFirmwareAction",
     "beeSimFirmwareTitle",
     "beeSimFirmwareWarning",
-    "beeSimFirmwareConfirm"
+    "beeSimFirmwareConfirm",
+    "qrtrReaderTitle",
+    "qrtrReaderSubtitle"
   ],
 
   "it": [
@@ -28,7 +34,9 @@
     "beeSimFirmwareAction",
     "beeSimFirmwareTitle",
     "beeSimFirmwareWarning",
-    "beeSimFirmwareConfirm"
+    "beeSimFirmwareConfirm",
+    "qrtrReaderTitle",
+    "qrtrReaderSubtitle"
   ],
 
   "ja": [
@@ -36,7 +44,9 @@
     "beeSimFirmwareAction",
     "beeSimFirmwareTitle",
     "beeSimFirmwareWarning",
-    "beeSimFirmwareConfirm"
+    "beeSimFirmwareConfirm",
+    "qrtrReaderTitle",
+    "qrtrReaderSubtitle"
   ],
 
   "ko": [
@@ -44,7 +54,9 @@
     "beeSimFirmwareAction",
     "beeSimFirmwareTitle",
     "beeSimFirmwareWarning",
-    "beeSimFirmwareConfirm"
+    "beeSimFirmwareConfirm",
+    "qrtrReaderTitle",
+    "qrtrReaderSubtitle"
   ],
 
   "ru": [
@@ -52,7 +64,9 @@
     "beeSimFirmwareAction",
     "beeSimFirmwareTitle",
     "beeSimFirmwareWarning",
-    "beeSimFirmwareConfirm"
+    "beeSimFirmwareConfirm",
+    "qrtrReaderTitle",
+    "qrtrReaderSubtitle"
   ],
 
   "zh": [
@@ -60,7 +74,9 @@
     "beeSimFirmwareAction",
     "beeSimFirmwareTitle",
     "beeSimFirmwareWarning",
-    "beeSimFirmwareConfirm"
+    "beeSimFirmwareConfirm",
+    "qrtrReaderTitle",
+    "qrtrReaderSubtitle"
   ],
 
   "zh_TW": [
@@ -68,6 +84,8 @@
     "beeSimFirmwareAction",
     "beeSimFirmwareTitle",
     "beeSimFirmwareWarning",
-    "beeSimFirmwareConfirm"
+    "beeSimFirmwareConfirm",
+    "qrtrReaderTitle",
+    "qrtrReaderSubtitle"
   ]
 }

@@ -3922,6 +3922,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Import'**
   String get importAction;
+
+  /// No description provided for @qrtrReaderTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Qualcomm modem (QRTR)'**
+  String get qrtrReaderTitle;
+
+  /// No description provided for @qrtrReaderSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Qualcomm\'s low-level modem protocol'**
+  String get qrtrReaderSubtitle;
 }
 
 class _AppLocalizationsDelegate

@@ -2009,6 +2009,12 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get importAction => '导入';
+
+  @override
+  String get qrtrReaderTitle => 'Qualcomm modem (QRTR)';
+
+  @override
+  String get qrtrReaderSubtitle => 'Qualcomm\'s low-level modem protocol';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).

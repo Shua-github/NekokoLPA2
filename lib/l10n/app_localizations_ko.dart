@@ -2035,4 +2035,10 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get importAction => 'Import';
+
+  @override
+  String get qrtrReaderTitle => 'Qualcomm modem (QRTR)';
+
+  @override
+  String get qrtrReaderSubtitle => 'Qualcomm\'s low-level modem protocol';
 }

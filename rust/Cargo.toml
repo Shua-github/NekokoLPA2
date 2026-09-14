@@ -1,0 +1,25 @@
+[package]
+name = "rust_lib_nlpa2"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+
+[dependencies]
+anyhow = "1"
+flutter_rust_bridge = "=2.13.0"
+# Published crates: nothing here may point outside this repository, or a clean
+# checkout has nothing to resolve. `qrtr` is the only feature wanted, and with
+# it `rm-qmi` pulls in no USB: those sit behind its `usb` feature.
+rm-client-core = "0.1.0"
+rm-qmi = { version = "0.1.0", features = ["qrtr"] }
+
+[target.'cfg(target_os = "android")'.dependencies]
+# The JNI entry points in this crate are written against 0.21: 0.22 split
+# `JNIEnv` into `Env` and `EnvUnowned` and renamed the methods with it.
+jni = "=0.21.1"
+libc = "0.2"
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(frb_expand)'] }
